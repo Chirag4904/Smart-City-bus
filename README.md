@@ -19,10 +19,10 @@ Each bus will be installed with an AI-powered Camera to monitor the safety of pa
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Node.js][nodejs.org]][nodejs-url]
-* [![JavaScript][javascript.com]][JavaScript-url]
-* [![here][here.com]][here-url]
+* [![Svelte][Svelte.dev]][https://svelte.dev/]
+* [![Node.js][nodejs.org]][https://nodejs.org/en/]
+* [![JavaScript][javascript.com]][https://www.javascript.com/]
+* [![here][here.com]][https://www.here.com/]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

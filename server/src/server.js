@@ -11,7 +11,7 @@ const server = http.createServer(app);
 async function startServer() {
   await mongoConnect(process.env.MONGODB_URL || "");
 
-  await loadRoutesData();
+  //   await loadRoutesData();
   // await loadsubjectsData();
 
   server.listen(PORT, () => {

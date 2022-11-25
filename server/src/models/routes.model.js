@@ -60,7 +60,73 @@ const route1 = {
   ],
 };
 
-let routes = [route1];
+const route2 = {
+  id: 2,
+  source: {
+    name: "IGI Airport",
+    lat: 28.556554,
+    lng: 77.086705,
+    segment: 2,
+  },
+  destination: {
+    name: "Shahbad Railway Station",
+    lat: 28.559988,
+    lng: 77.071612,
+    segment: 2,
+  },
+  waypoints: [
+    {
+      name: "Aerocity",
+      lat: 28.555309,
+      lng: 77.121467,
+      segment: 2,
+    },
+    {
+      name: " Ajmer Road",
+      lat: 28.55091,
+      lng: 77.129776,
+      segment: 2,
+    },
+    {
+      name: "Mahipal pur village",
+      lat: 28.546714,
+      lng: 77.124391,
+      segment: 2,
+    },
+    {
+      name: "Radisson Blu Plaza",
+      lat: 28.543151,
+      lng: 77.118803,
+      segment: 2,
+    },
+    {
+      name: "Ambience Mall Road",
+      lat: 28.505244,
+      lng: 77.095012,
+      segment: 2,
+    },
+    {
+      name: "City Affairs Garden",
+      lat: 28.503948,
+      lng: 77.06875,
+      segment: 2,
+    },
+    {
+      name: "Link Road",
+      lat: 28.545567,
+      lng: 77.060391,
+      segment: 2,
+    },
+  ],
+  connections: [
+    {
+      to: "segment2",
+      routeId: 2,
+    },
+  ],
+};
+
+let routes = [route1, route2];
 
 async function saveRoute(route) {
   try {

@@ -1,4 +1,6 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 const cors = require("cors");
 
@@ -14,6 +16,8 @@ const AuthRoute = require("./routes/auth");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, "..", "..", "client", "dist")));
 
 app.use((err, req, res, next) => {
   if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
@@ -35,5 +39,11 @@ app.get("/", (req, res) => {
 app.use("/routes", routesRouter);
 
 app.use("/auth", AuthRoute);
+
+app.get("/app", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "..", "..", "client", "dist", "index.html")
+  );
+});
 
 module.exports = app;

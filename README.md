@@ -68,6 +68,14 @@ This is an example of how to list things you need to use the software and how to
    ```js
    npm i
    ```
+4. Now run npm server:
+    ```sh
+   npm run server
+   ```
+5. Navigate back to client and run:
+   ```sh
+   npm run dev
+   ```
 
 ## Case Study to make public transport more efficient
 

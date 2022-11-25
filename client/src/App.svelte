@@ -7,4 +7,4 @@
   import SignUp from "./Components/SignUp.svelte";
 </script>
 
-<Wallet />
+<Map />

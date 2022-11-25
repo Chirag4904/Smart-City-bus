@@ -28,7 +28,7 @@
 		// Add event listener:
 		map.addEventListener("tap", function (evt) {
 			// Log 'tap' and 'mouse' events:
-			console.log(evt.type, evt.currentPointer.type);
+			console.log(evt.target.N);
 		});
 		var behavior = new H.mapevents.Behavior(mapEvents);
 		var circle = new H.map.Circle({ lat: 28.4684, lng: 77.0521 }, 8000);

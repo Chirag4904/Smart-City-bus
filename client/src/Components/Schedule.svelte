@@ -1,18 +1,28 @@
 <script>
   import Icon from "@iconify/svelte";
+  export let arrivalTime;
+  export let reachTime;
+  export let source;
+  export let destination;
 </script>
 
 <div class="relative w-screen h-screen">
   <div class=" flex top-1 header items-center gap-[18rem] justify-between ">
     <img src="../../src/assets/lg1.png" alt="" class="w-[5rem] h-[4rem]" />
     <div class=" item flex items-center gap-x-20 cursor-pointer ">
-      <div>All Bus</div>
-      <div>Schedule</div>
-      <div>Wallet</div>
-      <div>Map</div>
+      <div class="hover:text-orange-500">All Bus</div>
+      <div class="hover:text-orange-500 text-orange-500">Schedule</div>
+      <div class="hover:text-orange-500">Wallet</div>
+      <div class="hover:text-orange-500">Map</div>
     </div>
     <div class="flex items-center gap-x-4 mr-4 cursor-pointer">
-      <Icon icon="mdi:qrcode-scan" color="gray" width="40" height="40" />
+      <Icon
+        icon="mdi:qrcode-scan"
+        color="gray"
+        width="40"
+        height="40"
+        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover: duration-300 ..."
+      />
       <Icon
         icon="ion:search-circle-outline"
         color="gray"
@@ -42,14 +52,15 @@
     <div
       class="title text-[22px] mt-[5px] ml-[10px] mb-[5px] font-bold bg-orange-400 rounded-lg p-2"
     >
-      Bus1-4359
+      Bus-4359
     </div>
     <div class="vl mt-10" />
     <div>
       <div class="text-[25px]">
-        7:40 <span class="text-gray-600 text-[25px] font-bold">AM</span>
+        {arrivalTime}
+        <span class="text-gray-600 text-[25px] font-bold">AM</span>
       </div>
-      <div class=" place font-semibold text-[20px]">IGI Airport</div>
+      <div class=" place font-semibold text-[20px]">{source}</div>
     </div>
     <div class="flex items-center gap-2">
       <div class="hl" />
@@ -58,9 +69,9 @@
     </div>
     <div>
       <div class="text-[25px] font-semibold">
-        8:15 <span class="text-gray-500 text-[25px] font-bold">AM</span>
+        {reachTime} <span class="text-gray-500 text-[25px] font-bold">AM</span>
       </div>
-      <div class=" place text-[20px] font-semibold">Link Road</div>
+      <div class=" place text-[20px] font-semibold">{destination}</div>
     </div>
   </div>
 </div>

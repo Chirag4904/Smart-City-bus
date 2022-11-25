@@ -15,6 +15,16 @@ We aim to develop an application where user can locate the live GPS location of 
 ### Prioritizing passengers safety and privacy
 Each bus will be installed with an AI-powered Camera to monitor the safety of passengers live round the clock, any kind of unusual activity or emergency inside the bus will trigger the distress alert. 
 
+### Scheduled Bus Timings
+With the aid of map API, the bus timetable will be updated in real time. It will use GPS to locate the bus and update the arrival time in the application.
+
+### Scan for entry and exit, pay accordingly
+Each passenger must scan a QR code to pay while boarding the bus, and they must do so again to exit so that the application can update the seat availability in real time.
+
+### One Click Away Information
+An application will be provided with all of the bus's information. It only takes a click to access the bus location, payment system, and distress alarm etc.
+
+
 ## Technology Stack
 
 <a href="https://svelte.dev/" title="Svelte"><img src="https://github.com/get-icon/geticon/raw/master/icons/svelte-icon.svg" alt="Svelte" width="21px" height="21px">&nbsp; Svelte</a> <br>

@@ -9,7 +9,7 @@
 	// default style as the base layer:
 	let mapper;
 	onMount(async function () {
-		const resp = await axios.get("http://localhost:5000/routes");
+		const resp = await axios.get("http://34.125.168.157:5000/routes");
 		console.log(resp, "resp");
 
 		let source = resp.data[1].source;

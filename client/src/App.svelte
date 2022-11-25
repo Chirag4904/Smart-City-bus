@@ -21,10 +21,13 @@
 			<Schedule />
 		</Route>
 		<Route path="/login">
-			= <Login />
+			<Login />
 		</Route>
 		<Route path="/signup">
 			<SignUp />
+		</Route>
+		<Route path="/wallet">
+			<Wallet />
 		</Route>
 	</body>
 </Router>

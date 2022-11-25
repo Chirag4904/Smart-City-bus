@@ -15,9 +15,7 @@ We aim to develop an application where user can locate the live GPS location of 
 ## Prioritizing passengers safety and privacy
 Each bus will be installed with an AI-powered Camera to monitor the safety of passengers live round the clock, any kind of unusual activity or emergency inside the bus will trigger the distress alert. 
 
-## Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+## Technology Stack
 
 <a href="https://svelte.dev/" title="Svelte"><img src="https://github.com/get-icon/geticon/raw/master/icons/svelte-icon.svg" alt="Svelte" width="21px" height="21px">&nbsp; Svelte</a> <br>
 <a href="https://nodejs.org/" title="Node.js"><img src="https://github.com/get-icon/geticon/raw/master/icons/nodejs-icon.svg" alt="Node.js" width="21px" height="21px">&nbsp;NodeJS</a> <br>
@@ -25,7 +23,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <a href="https://vitejs.dev/" title="Vite"><img src="https://github.com/get-icon/geticon/raw/master/icons/vite.svg" alt="Vite" width="21px" height="21px">&nbsp;ViteJS</a> <br>
 <a href="https://tailwindcss.com/" title="Tailwind CSS"><img src="https://github.com/get-icon/geticon/raw/master/icons/tailwindcss-icon.svg" alt="Tailwind CSS" width="21px" height="21px">&nbsp;Tailwind CSS</a> <br>
 <a href="https://git-scm.com/" title="Git"><img src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg" alt="Git" width="21px" height="21px">&nbsp;Git</a> <br>
-<a href="https://developers.google.com/web/tools/workbox" title="Workbox"><img src="https://github.com/get-icon/geticon/raw/master/icons/workbox-icon.svg" alt="Workbox" width="21px" height="21px">&nbsp;Google Cloud</a> <br>
 
 
 

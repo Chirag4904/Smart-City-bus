@@ -1,6 +1,6 @@
 <script>
 	// console.log(window);
-	import RouteAPI from "./RouteAPI.svelte";
+
 	import { onMount } from "svelte";
 	import gurgaon from "../data.js";
 	import axios from "axios";
@@ -305,7 +305,6 @@
 
 <div class="test" bind:this={mapper} />
 
-<!-- <RouteAPI /> -->
 <style>
 	.test {
 		width: 100vw;

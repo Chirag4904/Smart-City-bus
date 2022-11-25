@@ -17,5 +17,14 @@
 		<Route path="/map">
 			<Map />
 		</Route>
+		<Route path="/schedule">
+			<Schedule />
+		</Route>
+		<Route path="/login">
+			= <Login />
+		</Route>
+		<Route path="/signup">
+			<SignUp />
+		</Route>
 	</body>
 </Router>

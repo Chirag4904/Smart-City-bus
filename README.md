@@ -33,6 +33,11 @@ An application will be provided with all of the bus's information. It only takes
 <a href="https://expressjs.com/" title="Express"><img src="https://github.com/get-icon/geticon/raw/master/icons/express.svg" alt="Express" width="21px" height="21px">&nbsp;ExpressJS</a> <br>
 <a href="https://tailwindcss.com/" title="Tailwind CSS"><img src="https://github.com/get-icon/geticon/raw/master/icons/tailwindcss-icon.svg" alt="Tailwind CSS" width="21px" height="21px">&nbsp;Tailwind CSS</a> <br>
 <a href="https://git-scm.com/" title="Git"><img src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg" alt="Git" width="21px" height="21px">&nbsp;Git</a> <br>
+<a href="https://www.docker.com/" title="docker"><img src="https://github.com/get-icon/geticon/raw/master/icons/docker-icon.svg" alt="docker" width="21px" height="21px">&nbsp;Docker</a> <br>
+
+![TechStack Diagram](https://user-images.githubusercontent.com/73948412/204052567-dabb307f-edeb-4649-aa57-73756260d267.png)
+
+
 
 ## Case Study to make public transport more efficient
 

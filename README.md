@@ -37,6 +37,40 @@ An application will be provided with all of the bus's information. It only takes
 
 ![TechStack Diagram](https://user-images.githubusercontent.com/73948412/204052567-dabb307f-edeb-4649-aa57-73756260d267.png)
 
+<!-- GETTING STARTED -->
+<!--
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+-->
+
 ## Case Study to make public transport more efficient
 
 https://user-images.githubusercontent.com/73948412/203935301-9072ed5c-6e44-47c0-9415-46ff60f4b623.mp4

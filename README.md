@@ -15,6 +15,16 @@ We aim to develop an application where user can locate the live GPS location of 
 ### Prioritizing passengers safety and privacy
 Each bus will be installed with an AI-powered Camera to monitor the safety of passengers live round the clock, any kind of unusual activity or emergency inside the bus will trigger the distress alert. 
 
+### Scheduled Bus Timings
+With the aid of map API, the bus timetable will be updated in real time. It will use GPS to locate the bus and update the arrival time in the application.
+
+### Scan for entry and exit, pay accordingly
+Each passenger must scan a QR code to pay while boarding the bus, and they must do so again to exit so that the application can update the seat availability in real time.
+
+### One Click Away Information
+An application will be provided with all of the bus's information. It only takes a click to access the bus location, payment system, and distress alarm etc.
+
+
 ## Technology Stack
 
 <a href="https://svelte.dev/" title="Svelte"><img src="https://github.com/get-icon/geticon/raw/master/icons/svelte-icon.svg" alt="Svelte" width="21px" height="21px">&nbsp; Svelte</a> <br>
@@ -23,6 +33,10 @@ Each bus will be installed with an AI-powered Camera to monitor the safety of pa
 <a href="https://expressjs.com/" title="Express"><img src="https://github.com/get-icon/geticon/raw/master/icons/express.svg" alt="Express" width="21px" height="21px">&nbsp;ExpressJS</a> <br>
 <a href="https://tailwindcss.com/" title="Tailwind CSS"><img src="https://github.com/get-icon/geticon/raw/master/icons/tailwindcss-icon.svg" alt="Tailwind CSS" width="21px" height="21px">&nbsp;Tailwind CSS</a> <br>
 <a href="https://git-scm.com/" title="Git"><img src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg" alt="Git" width="21px" height="21px">&nbsp;Git</a> <br>
+
+## Case Study to make public transport more efficient
+
+https://user-images.githubusercontent.com/73948412/203935301-9072ed5c-6e44-47c0-9415-46ff60f4b623.mp4
 
 
 

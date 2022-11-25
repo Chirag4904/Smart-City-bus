@@ -9,14 +9,14 @@ const PORT = process.env.PORT || 5000;
 const server = http.createServer(app);
 
 async function startServer() {
-  await mongoConnect(process.env.MONGODB_URL || "");
+	await mongoConnect(process.env.MONGODB_URL || "");
 
-  //   await loadRoutesData();
-  // await loadsubjectsData();
+	// await loadRoutesData();
+	// await loadsubjectsData();
 
-  server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
+	server.listen(PORT, () => {
+		console.log(`Server is running on port ${PORT}`);
+	});
 }
 
 startServer();

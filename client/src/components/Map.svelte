@@ -3,51 +3,127 @@
 	import RouteAPI from "./RouteAPI.svelte";
 	import { onMount } from "svelte";
 	import gurgaon from "../data.js";
+	import axios from "axios";
 	console.log(gurgaon);
 	// Instantiate the map using the vecor map with the
 	// default style as the base layer:
 	let mapper;
-	onMount(() => {
+	onMount(async function () {
+		const resp = await axios.get("http://localhost:5000/routes");
+		console.log(resp, "resp");
+		let source = resp.data[1].source;
+		let destination = resp.data[1].destination;
+		let waypointsTransit = [];
+		resp.data[1].waypoints.forEach((waypoint) => {
+			waypointsTransit.push(waypoint);
+		});
+
+		let s2 = resp.data[0].source;
+		let d2 = resp.data[0].destination;
+		let waypointsRouting = [];
+		resp.data[0].waypoints.forEach((waypoint) => {
+			waypointsRouting.push(`${waypoint.lat},${waypoint.lng}`);
+		});
 		const H = window.H;
 		console.log(window);
 		const platform = new H.service.Platform({
 			apikey: "6odJUv7kDQPaYtH2picifXqt27HJJ073KvFZHaEnrdY",
 		});
 
+		addRouteRouting(platform, waypointsRouting, H, onResult, s2, d2);
 		const defaultLayers = platform.createDefaultLayers();
-		console.log(defaultLayers);
+		// console.log(defaultLayers);
 		// console.log(window.H);
 		const map = new H.Map(mapper, defaultLayers.raster.normal.transit, {
-			zoom: 13,
+			zoom: 12,
 			center: { lat: 28.4595, lng: 77.0266 },
 			pixelRatio: window.devicePixelRatio || 1,
 		});
 
 		const mapEvents = new H.mapevents.MapEvents(map);
+		let ui = H.ui.UI.createDefault(map, defaultLayers);
 
 		// Add event listener:
 		map.addEventListener("tap", function (evt) {
 			// Log 'tap' and 'mouse' events:
-			console.log(evt.target.N);
+			console.log(evt.target);
 		});
 		var behavior = new H.mapevents.Behavior(mapEvents);
-		var circle = new H.map.Circle({ lat: 28.4684, lng: 77.0521 }, 8000);
+		var circle = new H.map.Circle({ lat: 28.4684, lng: 77.0521 }, 11000);
 
 		// Add the circle to the map:
 		map.addObject(circle);
 		// var ui = H.ui.UI.createDefault(map, defaultLayers);
 		// test(map);
-		let waypoints = [
-			`${gurgaon[3].lat},${gurgaon[3].lng}`,
-			`${gurgaon[4].lat},${gurgaon[4].lng}`,
-		];
-		let waypoints1 = [`${gurgaon[0].lat},${gurgaon[0].lng}`];
+		// let waypoints = [
+		// 	`${gurgaon[3].lat},${gurgaon[3].lng}`,
+		// 	`${gurgaon[4].lat},${gurgaon[4].lng}`,
+		// ];
+		// let waypoints1 = [`${gurgaon[0].lat},${gurgaon[0].lng}`];
 
-		addRoute(platform, waypoints, H, onResult);
-		addRoute(platform, waypoints1, H, onResult);
+		let trafficService = platform.getTrafficService(),
+			provider = new H.service.traffic.flow.Provider(trafficService);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			source,
+			waypointsTransit[0]
+		);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			waypointsTransit[0],
+			waypointsTransit[1]
+		);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			waypointsTransit[1],
+			waypointsTransit[2]
+		);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			waypointsTransit[2],
+			waypointsTransit[3]
+		);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			waypointsTransit[3],
+			waypointsTransit[4]
+		);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			waypointsTransit[4],
+			waypointsTransit[5]
+		);
+		addRouteTransit(
+			platform,
+			waypointsTransit,
+			H,
+			onResult,
+			waypointsTransit[5],
+			destination
+		);
+		// addRoute(platform, waypoints, H, onResult, source, destination);
+		// addRoute(platform, waypoints1, H, onResult,source,destination);
 		function onResult(result) {
-			console.log("hello");
-			console.log(result);
+			// console.log("hello");
+			console.log(result, "result");
 			// ensure that at least one route was found
 			if (result.routes.length) {
 				result.routes[0].sections.forEach((section) => {
@@ -55,15 +131,56 @@
 					let linestring = H.geo.LineString.fromFlexiblePolyline(
 						section.polyline
 					);
+					let routeOutline;
+					if (result.notices) {
+						routeOutline = new H.map.Polyline(linestring, {
+							style: {
+								lineWidth: 5,
+								strokeColor: "rgba(0, 128, 255, 0.7)",
+								lineTailCap: "arrow-tail",
+								lineHeadCap: "arrow-head",
+							},
+						});
+					} else {
+						routeOutline = new H.map.Polyline(linestring, {
+							style: {
+								lineWidth: 5,
+								strokeColor: "rgba(245, 24, 24, 0.7)",
+								lineTailCap: "arrow-tail",
+								lineHeadCap: "arrow-head",
+							},
+						});
+					}
+					// Create a patterned polyline:
+					let routeArrows = new H.map.Polyline(linestring, {
+						style: {
+							lineWidth: 10,
+							fillColor: "white",
+							strokeColor: "rgba(255, 255, 255, 1)",
+							lineDash: [0, 2],
+							lineTailCap: "arrow-tail",
+							lineHeadCap: "arrow-head",
+						},
+					});
 
 					// Create a polyline to display the route:
-					let routeLine = new H.map.Polyline(linestring, {
-						style: { strokeColor: "blue", lineWidth: 3 },
-					});
+					let routeLine = new H.map.Group();
+					routeLine.addObjects([routeOutline, routeArrows]);
 
 					// Create a marker for the start point:
 					let startMarker = new H.map.Marker(section.departure.place.location);
+					// let bubble = new H.ui.InfoBubble(
+					// 	{
+					// 		lng: section.departure.place.location.lng,
+					// 		lat: section.departure.place.location.lat,
+					// 	},
+					// 	{
+					// 		content: "<b>hellu</b>",
+					// 	}
+					// );
 
+					// // Add info bubble to the UI:
+					// ui.addBubble(bubble);
 					// Create a marker for the end point:
 					let endMarker = new H.map.Marker(section.arrival.place.location);
 
@@ -71,22 +188,49 @@
 					map.addObjects([routeLine, startMarker, endMarker]);
 
 					// Set the map's viewport to make the whole route visible:
-					map
-						.getViewModel()
-						.setLookAtData({ bounds: routeLine.getBoundingBox() });
+					map.getViewModel();
+					// .setLookAtData({ bounds: routeLine.getBoundingBox() });
 				});
 			}
 		}
 	});
 
-	function addRoute(platform, waypoints, H, onResult) {
+	async function addRouteTransit(
+		platform,
+		waypoints,
+		H,
+		onResult,
+		source,
+		destination
+	) {
+		const url =
+			"https://transit.router.hereapi.com/v8/routes?origin=41.79457,12.25473&destination=41.90096,12.50243&return=polyline&apikey=6odJUv7kDQPaYtH2picifXqt27HJJ073KvFZHaEnrdY";
+
+		let routeParameters = {
+			origin: `${source.lat},${source.lng}`,
+			destination: `${destination.lat},${destination.lng}`,
+			return: "polyline",
+		};
+		let publicTransitService = platform.getPublicTransitService();
+		publicTransitService.getRoutes(routeParameters, onResult, function (error) {
+			alert(error.message);
+		});
+	}
+
+	async function addRouteRouting(
+		platform,
+		waypoints,
+		H,
+		onResult,
+		source,
+		destination
+	) {
 		var routingParameters = {
 			routingMode: "fast",
 			transportMode: "bus",
 			// The start point of the route:
-			origin: "28.4647,77.0845",
-			// The end point of the route:
-			destination: "28.4738,77.0107",
+			origin: `${source.lat},${source.lng}`,
+			destination: `${destination.lat},${destination.lng}`,
 			// via: [
 			// 	`${gurgaon[3].lat},${gurgaon[3].lng}`,
 			// 	`${gurgaon[4].lat},${gurgaon[4].lng}`,
@@ -157,13 +301,13 @@
 	// 	}
 </script>
 
-<div bind:this={mapper} />
+<div class="test" bind:this={mapper} />
 <RouteAPI />
 
 <style>
-	div {
+	.test {
 		width: 100vw;
 		height: 100vh;
-		border-radius: 999px;
+		border-radius: 10rem;
 	}
 </style>

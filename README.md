@@ -24,6 +24,10 @@ Each bus will be installed with an AI-powered Camera to monitor the safety of pa
 <a href="https://tailwindcss.com/" title="Tailwind CSS"><img src="https://github.com/get-icon/geticon/raw/master/icons/tailwindcss-icon.svg" alt="Tailwind CSS" width="21px" height="21px">&nbsp;Tailwind CSS</a> <br>
 <a href="https://git-scm.com/" title="Git"><img src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg" alt="Git" width="21px" height="21px">&nbsp;Git</a> <br>
 
+## Case Study to make public transport more efficient
+
+https://user-images.githubusercontent.com/73948412/203935301-9072ed5c-6e44-47c0-9415-46ff60f4b623.mp4
+
 
 
 

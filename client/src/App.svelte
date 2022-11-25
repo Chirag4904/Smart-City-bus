@@ -8,7 +8,4 @@
 	import RestAPI from "./components/RestAPI.svelte";
 </script>
 
-<!-- <Schedule />
-<RestAPI /> -->
-<!-- <Wallet /> -->
 <Map />

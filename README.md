@@ -58,17 +58,17 @@ This is an example of how to list things you need to use the software and how to
 <!-- 1. Get a free API Key at [https://example.com](https://example.com) -->
 1. Clone the repo
    ```sh
-   git clone https://github.com/Chirag4904/herehack_S6_TeamACV.git
+   git clone https://github.com/your_username_/Project-Name.git
    ```
-2. Navigate to Client and install all dependicies using:
+2. Navigate to client and install all dependencies using:
    ```sh
    npm i
    ```
-3. Navigate to Server and install all dependicies using:
+3. Navigate to server and install all dependencies using:
    ```js
    npm i
    ```
-4. Now run npm server:
+4. Now run backend api in server directory:
     ```sh
    npm run server
    ```
@@ -76,6 +76,8 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm run dev
    ```
+   
+   BINGO!!
 
 ## Case Study to make public transport more efficient
 

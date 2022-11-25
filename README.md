@@ -37,8 +37,6 @@ An application will be provided with all of the bus's information. It only takes
 
 ![TechStack Diagram](https://user-images.githubusercontent.com/73948412/204052567-dabb307f-edeb-4649-aa57-73756260d267.png)
 
-
-
 ## Case Study to make public transport more efficient
 
 https://user-images.githubusercontent.com/73948412/203935301-9072ed5c-6e44-47c0-9415-46ff60f4b623.mp4

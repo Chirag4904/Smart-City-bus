@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-// const teachersRouter = require("./routes/teachers/teachers.router");
+const routesRouter = require("./routes/routes.router");
 // const subjectsRouter = require("./routes/subjects/subjects.router");
 
 /** setup logging */
@@ -14,22 +14,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use((err, req, res, next) => {
-	if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
-		console.error(err);
-		res.status(400).json({ error: true, error_desc: err }); // Bad request
-		return;
-	}
-	next();
+  if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
+    console.error(err);
+    res.status(400).json({ error: true, error_desc: err }); // Bad request
+    return;
+  }
+  next();
 });
 
 app.use(
-	cors({
-		origin: "*",
-	})
+  cors({
+    origin: "*",
+  })
 );
 app.get("/", (req, res) => {
-	res.send("hello");
+  res.send("hello");
 });
-// app.use("/api/teachers", );
+app.use("/routes", routesRouter);
 
 module.exports = app;

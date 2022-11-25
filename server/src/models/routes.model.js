@@ -126,7 +126,127 @@ const route2 = {
 	],
 };
 
-let routes = [route1, route2];
+const route3 = {
+	id: 3,
+	source: {
+		name: "The Close South",
+		lat: 28.412328,
+		lng: 77.074200,
+		segment: 3,
+	},
+	destination: {
+		name: "FabIndia OverSeas",
+		lat: 28.422473,
+		lng: 77.053494,
+		segment: 3,
+	},
+	waypoints: [
+		{
+			name: "CK Birla Hospital",
+			lat: 28.423415,
+			lng: 77.061244,
+			segment: 3,
+		},
+		{
+			name: "Huda Colony",
+			lat: 28.434445,
+			lng: 77.049509,
+			segment: 3,
+		},
+		{
+			name: "Medanta",
+			lat: 28.440396,
+			lng: 77.041375,
+			segment: 3,
+		},
+		{
+			name: "Tau Devilal Sports Complex",
+			lat: 28.443924,
+			lng: 77.034108,
+			segment: 3,
+		},
+		{
+			name: "Decathlon",
+			lat: 28.427829,
+			lng: 77.037364,
+			segment: 3,
+		},
+		{
+			name: "Block S",
+			lat: 28.417311,
+			lng: 77.040834,
+			segment: 3,
+		},
+	],
+	connections: [
+		{
+			to: "segment3",
+			routeId: 3,
+		},
+	],
+};
+
+const route4 = {
+	id: 4,
+	source: {
+		name: "The North Cap University",
+		lat: 28.506392,
+		lng: 77.051504,
+		segment: 4,
+	},
+	destination: {
+		name: "Maruti Udyog",
+		lat: 28.498699,
+		lng: 77.064185,
+		segment: 3,
+	},
+	waypoints: [
+		{
+			name: "Sector 1",
+			lat: 28.516384,
+			lng: 77.045777,
+			segment: 4,
+		},
+		{
+			name: "Palam Vihar",
+			lat: 28.516025,
+			lng: 77.033342,
+			segment: 4,
+		},
+		{
+			name: "Presidium School",
+			lat: 28.502294,
+			lng: 77.029170,
+			segment: 4,
+		},
+		{
+			name: "CGHS Wellness Centre",
+			lat: 28.482953,
+			lng: 77.021562,
+			segment: 4,
+		},
+		{
+			name: "Country Inn & Suites",
+			lat: 28.467995,
+			lng: 77.037515,
+			segment: 4,
+		},
+		{
+			name: "Rajiv Nagar",
+			lat: 28.482809,
+			lng: 77.049786,
+			segment: 4,
+		},
+	],
+	connections: [
+		{
+			to: "segment3",
+			routeId: 3,
+		},
+	],
+};
+
+let routes = [route1, route2, route3,route4];
 
 async function saveRoute(route) {
 	try {

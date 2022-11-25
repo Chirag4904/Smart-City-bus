@@ -1,4 +1,5 @@
 <script>
+	import { Router, Route, Link, navigate } from "svelte-routing";
 	import Login from "./Components/Login.svelte";
 	import Map from "./components/Map.svelte";
 	import Schedule from "./Components/Schedule.svelte";
@@ -8,4 +9,13 @@
 	import RestAPI from "./components/RestAPI.svelte";
 </script>
 
-<Map />
+<Router>
+	<body>
+		<Route path="/">
+			<Welcome />
+		</Route>
+		<Route path="/map">
+			<Map />
+		</Route>
+	</body>
+</Router>

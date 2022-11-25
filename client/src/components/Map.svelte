@@ -11,6 +11,7 @@
 	onMount(async function () {
 		const resp = await axios.get("http://localhost:5000/routes");
 		console.log(resp, "resp");
+
 		let source = resp.data[1].source;
 		let destination = resp.data[1].destination;
 		let waypointsTransit = [];
@@ -18,19 +19,20 @@
 			waypointsTransit.push(waypoint);
 		});
 
-		let s2 = resp.data[0].source;
-		let d2 = resp.data[0].destination;
-		let waypointsRouting = [];
-		resp.data[0].waypoints.forEach((waypoint) => {
-			waypointsRouting.push(`${waypoint.lat},${waypoint.lng}`);
-		});
 		const H = window.H;
 		console.log(window);
 		const platform = new H.service.Platform({
-			apikey: "6odJUv7kDQPaYtH2picifXqt27HJJ073KvFZHaEnrdY",
+			apikey: "BSNlq_zRKvN-myRqnT6hPdGSPl5kjCBMPw2Y615ZgLk",
 		});
-
-		addRouteRouting(platform, waypointsRouting, H, onResult, s2, d2);
+		resp.data.forEach((route) => {
+			let s2 = route.source;
+			let d2 = route.destination;
+			let waypointsRouting = [];
+			route.waypoints.forEach((waypoint) => {
+				waypointsRouting.push(`${waypoint.lat},${waypoint.lng}`);
+			});
+			addRouteRouting(platform, waypointsRouting, H, onResult, s2, d2);
+		});
 		const defaultLayers = platform.createDefaultLayers();
 		// console.log(defaultLayers);
 		// console.log(window.H);
@@ -63,62 +65,62 @@
 
 		let trafficService = platform.getTrafficService(),
 			provider = new H.service.traffic.flow.Provider(trafficService);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			source,
-			waypointsTransit[0]
-		);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			waypointsTransit[0],
-			waypointsTransit[1]
-		);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			waypointsTransit[1],
-			waypointsTransit[2]
-		);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			waypointsTransit[2],
-			waypointsTransit[3]
-		);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			waypointsTransit[3],
-			waypointsTransit[4]
-		);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			waypointsTransit[4],
-			waypointsTransit[5]
-		);
-		addRouteTransit(
-			platform,
-			waypointsTransit,
-			H,
-			onResult,
-			waypointsTransit[5],
-			destination
-		);
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	source,
+		// 	waypointsTransit[0]
+		// );
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	waypointsTransit[0],
+		// 	waypointsTransit[1]
+		// );
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	waypointsTransit[1],
+		// 	waypointsTransit[2]
+		// );
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	waypointsTransit[2],
+		// 	waypointsTransit[3]
+		// );
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	waypointsTransit[3],
+		// 	waypointsTransit[4]
+		// );
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	waypointsTransit[4],
+		// 	waypointsTransit[5]
+		// );
+		// addRouteTransit(
+		// 	platform,
+		// 	waypointsTransit,
+		// 	H,
+		// 	onResult,
+		// 	waypointsTransit[5],
+		// 	destination
+		// );
 		// addRoute(platform, waypoints, H, onResult, source, destination);
 		// addRoute(platform, waypoints1, H, onResult,source,destination);
 		function onResult(result) {
@@ -302,8 +304,8 @@
 </script>
 
 <div class="test" bind:this={mapper} />
-<RouteAPI />
 
+<!-- <RouteAPI /> -->
 <style>
 	.test {
 		width: 100vw;

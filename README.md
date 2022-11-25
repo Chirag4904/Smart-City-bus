@@ -6,22 +6,22 @@ Public Transport System (Bus) – build public transport system for a smart city
 
 ## Ideal Solution
 
-### To optimize routes and bus stops allocations
+### To optimize routes and bus stops allocations (Priority)
 The ideas is to outline the smart city as a circle and divide it into 8 segments, then build an optimized route for each individual section and cross-section where buses will commute at regular intervals of time . The buses will be allocated according to the specific timings. 
 
 ### To allow users to track, book, pay and locate their bus from their phone
 We aim to develop an application where user can locate the live GPS location of buses depending on the sector they wants to travel. Like the metro card tap and pay service, we will develop a paid service by scanning a QR code while entering and leaving the bus through which we can also track the live seating availability in the bus. 
 
-### Prioritizing passengers safety and privacy
+### Prioritizing passengers safety and privacy 
 Each bus will be installed with an AI-powered Camera to monitor the safety of passengers live round the clock, any kind of unusual activity or emergency inside the bus will trigger the distress alert. 
 
-### Scheduled Bus Timings
+### Scheduled Bus Timings (Priority)
 With the aid of map API, the bus timetable will be updated in real time. It will use GPS to locate the bus and update the arrival time in the application.
 
-### Scan for entry and exit, pay accordingly
+### Scan for entry and exit, pay accordingly (Priority)
 Each passenger must scan a QR code to pay while boarding the bus, and they must do so again to exit so that the application can update the seat availability in real time.
 
-### One Click Away Information
+### One Click Away Information (Priority)
 An application will be provided with all of the bus's information. It only takes a click to access the bus location, payment system, and distress alarm etc.
 
 

@@ -5,7 +5,7 @@
   <div class="absolute flex ml-10 mr-10  top-1 header items-center gap-[42rem]">
     <img src="../../src/assets/lg1.png" alt="" class="w-[5rem] h-[4rem]" />
 
-    <div class=" flex items-center gap-x-20 ">
+    <div class=" flex items-center gap-x-20 cursor-pointer ">
       <div>About Us</div>
       <div>All Bus</div>
       <div>Schedule</div>

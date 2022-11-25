@@ -10,6 +10,8 @@ const routesRouter = require("./routes/routes.router");
 
 /** =============== */
 
+const AuthRoute = require("./routes/auth");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,5 +33,7 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 app.use("/routes", routesRouter);
+
+app.use("/auth", AuthRoute);
 
 module.exports = app;
